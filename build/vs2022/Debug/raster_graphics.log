@@ -1,8 +1,5 @@
 ﻿cl : command line  warning D9035: option 'Gm' has been deprecated and will be removed in a future release
-  dda_line_tool.cpp
-C:\Users\Oleg\Downloads\Archievs\02_raster_graphics\src\dda_line_tool.cpp(41,9): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
-C:\Users\Oleg\Downloads\Archievs\02_raster_graphics\src\dda_line_tool.cpp(61,26): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\Oleg\Downloads\Archievs\02_raster_graphics\src\dda_line_tool.cpp(79,29): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+  recursive_fill_tool.cpp
   raster_graphics.vcxproj -> C:\Users\Oleg\Downloads\Archievs\02_raster_graphics\build\vs2022\Debug\raster_graphics.exe
   Copy freeglut .dll to executable location
   ..\..\dependencies\freeglut\lib\freeglut.dll

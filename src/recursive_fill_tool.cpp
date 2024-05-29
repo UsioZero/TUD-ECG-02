@@ -4,6 +4,7 @@
 // Copyright (C) 2016 CGV TU Dresden - All Rights Reserved
 //
 #include "recursive_fill_tool.h"
+#include <iostream>
 
 // Initialize the tool and store a reference of a canvas_buffer
 recursive_fill_tool::recursive_fill_tool(canvas_buffer& canvas): tool_base(canvas)
@@ -33,6 +34,16 @@ void recursive_fill_tool::draw(int x, int y)
 				   gesetzt sind. Ein Pixel kann durch "canvas.set_pixel(x, y)" gesetzt
 				   werden.
 	*************/
+	if (x < 0 || y < 0) return;
+	if (x > 99 || y > 99) return;
+
+	if (canvas.get_pixel(x, y) == 1) return;
+	canvas.set_pixel(x, y);
+
+	recursive_fill_tool::draw(x - 1, y);
+	recursive_fill_tool::draw(x + 1, y);
+	recursive_fill_tool::draw(x, y - 1);
+	recursive_fill_tool::draw(x, y + 1);
 }
 
 
