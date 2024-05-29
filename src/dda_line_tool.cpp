@@ -5,6 +5,7 @@
 //
 #include "dda_line_tool.h"
 #include <algorithm>
+#include <iostream>
 
 
 // Initialize the tool and store a reference of a canvas_buffer
@@ -34,6 +35,58 @@ void dda_line_tool::draw(int x0, int y0, int x1, int y1)
 				   den Standardfall her. Falls Sie den Wert zweier Variablen vertauschen
 				   muessen koennen Sie dafür die Methode "std::swap(a, b)" verwenden.
    *************/
+
+
+
+	int dx = double(x1 - x0);
+	double dy = double(y1 - y0);
+	double m = dy / dx;
+	std::cout << x0 << ":" << y0 << " " << x1 << ":" << y1 << "\n";
+	//std::cout << m << "\n";
+
+	if (abs(dx) < abs(dy)) {
+
+		if (y0 > y1) {
+			int tmp = x0;
+			x0 = x1;
+			x1 = tmp;
+			tmp = y0;
+			y0 = y1;
+			y1 = tmp;
+		}
+
+		double x = x0;
+		m = dx / dy;	
+
+		for (int i = y0; i <= y1; i++) {
+
+			canvas.set_pixel(round(x), i);
+
+			x += m;
+		}
+	}
+	else {
+
+		if (x0 > x1) {
+			int tmp = x0;
+			x0 = x1;
+			x1 = tmp;
+			tmp = y0;
+			y0 = y1;
+			y1 = tmp;
+		}
+
+		double y = y0;
+
+		for (int i = x0; i <= x1; i++) {
+
+			canvas.set_pixel(i, round(y));
+
+			y += m;
+		}
+	}
+
+
 }
 
 
