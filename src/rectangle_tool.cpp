@@ -5,6 +5,7 @@
 //
 #include "rectangle_tool.h"
 #include <algorithm>
+#include "dda_line_tool.h"
 
 
 // Initialize the tool and store a reference of a canvas_buffer
@@ -24,7 +25,30 @@ void rectangle_tool::draw(int x0, int y0, int x1, int y1)
     Zusatzaufgabe:   Implementieren Sie die Rasterisierung eines
 	                 Rechtecks, das von (x0, y0) nach (x1, y1) geht.
 	*************/
+	if (x0 > x1) {
+		int tmp = x0;
+		x0 = x1;
+		x1 = tmp;
+	}
+	if (y0 > y1) {
+		int tmp = y0;
+		y0 = y1;
+		y1 = tmp;
+	}
+
+	for (int i = x0; i <= x1; i++) {
+		canvas.set_pixel(i, y0);
+		canvas.set_pixel(i, y1);
+	}
+
+	for (int i = y0; i <= y1; i++) {
+		canvas.set_pixel(x0, i);
+		canvas.set_pixel(x1, i);
+	}
+
 }
+
+
 
 
 
