@@ -1,0 +1,14 @@
+C:\Users\Oleg\Downloads\Archievs\02_raster_graphics\src\application.cpp;C:\Users\Oleg\Downloads\Archievs\02_raster_graphics\build\vs2022\Debug\application.obj
+C:\Users\Oleg\Downloads\Archievs\02_raster_graphics\src\canvas_buffer.cpp;C:\Users\Oleg\Downloads\Archievs\02_raster_graphics\build\vs2022\Debug\canvas_buffer.obj
+C:\Users\Oleg\Downloads\Archievs\02_raster_graphics\src\canvas_renderer.cpp;C:\Users\Oleg\Downloads\Archievs\02_raster_graphics\build\vs2022\Debug\canvas_renderer.obj
+C:\Users\Oleg\Downloads\Archievs\02_raster_graphics\src\main.cpp;C:\Users\Oleg\Downloads\Archievs\02_raster_graphics\build\vs2022\Debug\main.obj
+C:\Users\Oleg\Downloads\Archievs\02_raster_graphics\src\preview_renderer.cpp;C:\Users\Oleg\Downloads\Archievs\02_raster_graphics\build\vs2022\Debug\preview_renderer.obj
+C:\Users\Oleg\Downloads\Archievs\02_raster_graphics\src\bresenham_circle_tool.cpp;C:\Users\Oleg\Downloads\Archievs\02_raster_graphics\build\vs2022\Debug\bresenham_circle_tool.obj
+C:\Users\Oleg\Downloads\Archievs\02_raster_graphics\src\bresenham_line_tool.cpp;C:\Users\Oleg\Downloads\Archievs\02_raster_graphics\build\vs2022\Debug\bresenham_line_tool.obj
+C:\Users\Oleg\Downloads\Archievs\02_raster_graphics\src\dda_line_tool.cpp;C:\Users\Oleg\Downloads\Archievs\02_raster_graphics\build\vs2022\Debug\dda_line_tool.obj
+C:\Users\Oleg\Downloads\Archievs\02_raster_graphics\src\line_fill_tool.cpp;C:\Users\Oleg\Downloads\Archievs\02_raster_graphics\build\vs2022\Debug\line_fill_tool.obj
+C:\Users\Oleg\Downloads\Archievs\02_raster_graphics\src\non_recursive_fill_tool.cpp;C:\Users\Oleg\Downloads\Archievs\02_raster_graphics\build\vs2022\Debug\non_recursive_fill_tool.obj
+C:\Users\Oleg\Downloads\Archievs\02_raster_graphics\src\pen_tool.cpp;C:\Users\Oleg\Downloads\Archievs\02_raster_graphics\build\vs2022\Debug\pen_tool.obj
+C:\Users\Oleg\Downloads\Archievs\02_raster_graphics\src\rectangle_tool.cpp;C:\Users\Oleg\Downloads\Archievs\02_raster_graphics\build\vs2022\Debug\rectangle_tool.obj
+C:\Users\Oleg\Downloads\Archievs\02_raster_graphics\src\recursive_fill_tool.cpp;C:\Users\Oleg\Downloads\Archievs\02_raster_graphics\build\vs2022\Debug\recursive_fill_tool.obj
+C:\Users\Oleg\Downloads\Archievs\02_raster_graphics\src\tool_base.cpp;C:\Users\Oleg\Downloads\Archievs\02_raster_graphics\build\vs2022\Debug\tool_base.obj
