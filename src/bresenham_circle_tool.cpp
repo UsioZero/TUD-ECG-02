@@ -8,7 +8,7 @@
 #include <math.h>
 
 // Initialize the tool and store a reference of a canvas_buffer
-bresenham_circle_tool::bresenham_circle_tool(canvas_buffer& canvas): tool_base(canvas)
+bresenham_circle_tool::bresenham_circle_tool(canvas_buffer& canvas) : tool_base(canvas)
 {
 	// This tool draws circles!
 	shape = TS_CIRCLE;
@@ -20,16 +20,50 @@ bresenham_circle_tool::bresenham_circle_tool(canvas_buffer& canvas): tool_base(c
 void bresenham_circle_tool::draw(int x0, int y0, int x1, int y1)
 {
 	// Calculate the radius
-	int r = static_cast<int>(sqrt(static_cast<double>((x0-x1)*(x0-x1) + (y0-y1)*(y0-y1))));
+	int r = static_cast<int>(sqrt(static_cast<double>((x0 - x1) * (x0 - x1) + (y0 - y1) * (y0 - y1))));
 
 	/************
 	Additional task: Implement circle rasterization using the bresenham algorithm.
-	                 The circle shall have its center at (x0, y0) with a
+					 The circle shall have its center at (x0, y0) with a
 					 radius of "r".
-    Zusatzaufgabe:   Implementieren Sie die Rasterisierung eines Kreises mit dem
-	                 Bresenham-Algorithmus. Der Kreis soll seinen Mittelpunkt bei
+	Zusatzaufgabe:   Implementieren Sie die Rasterisierung eines Kreises mit dem
+					 Bresenham-Algorithmus. Der Kreis soll seinen Mittelpunkt bei
 					 (x0, y0) und einen Radius von "r" haben.
 	*************/
+
+	// Reference for the algorithm: https://www.gatevidyalay.com/bresenham-circle-drawing-algorithm/
+
+	int x = 0;
+	int y = r;
+	int decision = 3 - 2 * r; // Initial decision parameter
+
+	// Draw 8 initial points
+	auto draw_circle_points = [&](int xc, int yc, int x, int y) {
+		canvas.set_pixel(xc + x, yc + y);
+		canvas.set_pixel(xc - x, yc + y);
+		canvas.set_pixel(xc + x, yc - y);
+		canvas.set_pixel(xc - x, yc - y);
+		canvas.set_pixel(xc + y, yc + x);
+		canvas.set_pixel(xc - y, yc + x);
+		canvas.set_pixel(xc + y, yc - x);
+		canvas.set_pixel(xc - y, yc - x);
+		};
+
+	draw_circle_points(x0, y0, x, y);
+
+	while (y >= x) {
+		x++;
+
+		if (decision < 0) {
+			decision = decision + 4 * x + 6;
+		}
+		else {
+			y--;
+			decision = decision + 4 * (x - y) + 10;
+		}
+
+		draw_circle_points(x0, y0, x, y);
+	}
 
 }
 
@@ -39,5 +73,5 @@ void bresenham_circle_tool::draw(int x0, int y0, int x1, int y1)
 // main window
 void bresenham_circle_tool::set_text(std::stringstream& stream)
 {
-	stream<<"Tool: Bresenham-Circle (click and drag mouse to draw)";
+	stream << "Tool: Bresenham-Circle (click and drag mouse to draw)";
 }

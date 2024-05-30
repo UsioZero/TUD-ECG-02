@@ -1,1 +1,2 @@
 C:\Users\Oleg\Downloads\Archievs\02_raster_graphics\build\vs2022\Debug\raster_graphics.exe
+C:\Users\borod\source\repos\TUD-ECG-02\build\vs2022\Debug\raster_graphics.exe

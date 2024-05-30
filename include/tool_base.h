@@ -61,7 +61,7 @@ protected:
 	// The shape which is initialized in the constructor
 	ToolShape shape;
 	// A reference of the canvas store
-	canvas_buffer &canvas;
+	canvas_buffer & canvas;
 
 	bool is_draggable;
 };
