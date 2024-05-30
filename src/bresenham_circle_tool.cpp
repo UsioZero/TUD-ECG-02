@@ -31,6 +31,39 @@ void bresenham_circle_tool::draw(int x0, int y0, int x1, int y1)
 					 (x0, y0) und einen Radius von "r" haben.
 	*************/
 
+    int x = 0;
+    int y = r;
+    int decision = 1 - r;; // Initial decision parameter
+
+    // Draw the initial points
+    auto draw_circle_points = [&](int xc, int yc, int x, int y) {
+        canvas.set_pixel(xc + x, yc + y);
+        canvas.set_pixel(xc - x, yc + y);
+        canvas.set_pixel(xc + x, yc - y);
+        canvas.set_pixel(xc - x, yc - y);
+        canvas.set_pixel(xc + y, yc + x);
+        canvas.set_pixel(xc - y, yc + x);
+        canvas.set_pixel(xc + y, yc - x);
+        canvas.set_pixel(xc - y, yc - x);
+        };
+
+    draw_circle_points(x0, y0, x, y);
+
+    while (y >= x) {
+        x++;
+
+        // Check if the decision parameter needs to be updated
+        if (decision > 0) {
+            y--;
+            decision = decision + 4 * (x - y) + 10;
+        }
+        else {
+            decision = decision + 4 * x + 6;
+        }
+
+        draw_circle_points(x0, y0, x, y);
+    }
+
 }
 
 

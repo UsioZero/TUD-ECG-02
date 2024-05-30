@@ -1,6 +1,6 @@
 ﻿cl : command line  warning D9035: option 'Gm' has been deprecated and will be removed in a future release
-  line_fill_tool.cpp
-  raster_graphics.vcxproj -> C:\Users\Oleg\Downloads\Archievs\02_raster_graphics\build\vs2022\Debug\raster_graphics.exe
+  bresenham_circle_tool.cpp
+  raster_graphics.vcxproj -> C:\Users\borod\source\repos\TUD-ECG-02\build\vs2022\Debug\raster_graphics.exe
   Copy freeglut .dll to executable location
   ..\..\dependencies\freeglut\lib\freeglut.dll
-  1 File(s) copied
+  1 Datei(en) kopiert
